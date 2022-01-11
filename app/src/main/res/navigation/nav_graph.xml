@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.kurowskiandrzej.chessclock.view.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_clockEditorFragment"
+            app:destination="@id/clockEditorFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_clockFragment"
+            app:destination="@id/clockFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clockEditorFragment"
+        android:name="com.kurowskiandrzej.chessclock.view.fragment.TimeControlEditorFragment"
+        android:label="fragment_clock_editor"
+        tools:layout="@layout/fragment_time_control_editor" >
+        <action
+            android:id="@+id/action_clockEditorFragment_to_clockFragment"
+            app:destination="@id/clockFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clockFragment"
+        android:name="com.kurowskiandrzej.chessclock.view.fragment.ClockFragment"
+        android:label="fragment_clock"
+        tools:layout="@layout/fragment_clock" />
+</navigation>
